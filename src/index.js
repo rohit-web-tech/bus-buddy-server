@@ -20,9 +20,11 @@ import busRouter from "./routes/bus.route.js";
 import BusRouteRouter from "./routes/busRoute.route.js";
 import stationRouter from "./routes/station.route.js";
 import scheduleRouter from "./routes/schedule.route.js";
+import bookingRouter from "./routes/booking.route.js";
 
 app.use("/api/user",userRouter);
 app.use("/api/bus",busRouter);
 app.use("/api/route",BusRouteRouter);
 app.use("/api/station",stationRouter);
 app.use("/api/schedule",scheduleRouter);
+app.use("/api/booking",bookingRouter);

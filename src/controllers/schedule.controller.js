@@ -157,13 +157,13 @@ const getRouteSchedulesDetails = asyncHandler(async (req, res) => {
 })
 
 const getScheduleOnSearch = asyncHandler(async (req, res) => {
-    const { start, destination } = req.body;
+    const { start, destination, date } = req.body;
 
-    if (!start || !destination) {
+    if (!start || !destination || !date) {
         throw new ApiError(400, "All fields are required!!")
     }
 
-    const allSchedules = await getScheduleForARoute(start, destination);
+    const allSchedules = await getScheduleForARoute(start, destination, date);
 
     console.log(allSchedules)
 

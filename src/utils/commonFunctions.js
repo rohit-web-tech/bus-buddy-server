@@ -1,3 +1,4 @@
+import Booking from "../models/booking.model.js";
 import Schedule from "../models/sechdule.model.js";
 
 const scheduleAggregation = async () => {
@@ -96,11 +97,13 @@ const scheduleAggregation = async () => {
     allSchedules = await allSchedules.map(async (schedule) => {
         try {
 
-            let totalFare = 0, routeVia = [], totalDistance = 0, route = [];
+            let totalFare = 0, routeVia = [], totalDistance = 0, route = [] ;
 
             if (!schedule || schedule?.route.length < 1) {
                 return false;
             }
+
+            const bookings = await Booking.find({schedule:schedule._id});
 
             const routeLenght = schedule.route.length;
 
@@ -146,6 +149,7 @@ const scheduleAggregation = async () => {
                         totalFare,
                         via: routeVia,
                         busDetails: schedule.busDetails,
+                        bookings
                     };
 
                 }
@@ -177,17 +181,27 @@ const getScheduleForARoute = async (start, destination, date) => {
 
         try {
 
-            let totalFare = 0, routeVia = [], totalDistance = 0;
+            let totalFare = 0, routeVia = [], totalDistance = 0 , bookedSeats = [] ;
 
             if (!schedule || schedule?.route.length < 1) {
                 return false;
+            }
+            
+            let bookings = schedule?.bookings?.filter(booking => booking.bookingDate.toLocaleDateString() == (new Date(date)).toLocaleDateString());
+
+            console.log(bookings)
+
+            bookedSeats = bookings?.map(booking=>booking.seatNumber)
+
+            const booking = {
+                totalBookedSeats : bookings?.length,
+                remainingSeats : schedule?.busDetails?.totalSeats - bookings?.length,
+                bookedSeats
             }
 
             for (let i = 0; i < schedule.route.length; i++) {
 
                 const startStation = (schedule?.route[i]?.startStation?.stationName).trim().toLowerCase();
-
-                console.log(startStation)
 
                 if (startStation != start.toLowerCase().trim()) {
                     continue;
@@ -211,16 +225,19 @@ const getScheduleForARoute = async (start, destination, date) => {
                             _id: schedule._id,
                             startStation: {
                                 stationName: startStation,
-                                departTime: schedule?.route[j]?.startStationDepartTime
+                                departTime: schedule?.route[j]?.startStationDepartTime,
+                                _id: schedule?.route[j]?.startStation?._id
                             },
                             endStation: {
                                 stationName: endStation,
-                                arrivalTime: schedule?.route[j]?.endStationArrivalTime
+                                arrivalTime: schedule?.route[j]?.endStationArrivalTime,
+                                _id: schedule?.route[j]?.endStation?._id
                             },
                             totalDistance,
                             totalFare,
                             via: routeVia,
-                            busDetails: schedule.busDetails
+                            busDetails: schedule.busDetails,
+                            booking
                         };
 
                     }
@@ -234,7 +251,7 @@ const getScheduleForARoute = async (start, destination, date) => {
 
         } catch (error) {
 
-            // console.log(error)
+            console.log(error)
 
         }
 
