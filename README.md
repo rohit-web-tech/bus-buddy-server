@@ -23,15 +23,18 @@ Bus Buddy is a backend service for a bus booking web application that allows use
 To run this project locally, follow these steps:
 
 1. Clone the repository:
+   
    ```bash
-   git clone https://github.com/your-username/bus-buddy-backend.git
-   cd bus-buddy-backend
+   git clone https://github.com/your-username/bus-buddy-server.git
+   cd bus-buddy-server
 
 2. Install dependencies:
+   
    ```bash
    npm install
 
 3. Set up environment variables:
+   
    Create a .env file in the src directory with the following:
    ```bash
    PORT = 3000
@@ -50,5 +53,6 @@ To run this project locally, follow these steps:
    MY_EMAIL = YOUR_EMAIL_ID
 
 4. Run the server:
+   
    ```bash
    npm start
