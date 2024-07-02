@@ -1,7 +1,5 @@
 # Bus Buddy - Bus Booking Web Application (Backend)
 
-![Bus Buddy Logo](link_to_logo_if_available)
-
 Bus Buddy is a backend service for a bus booking web application that allows users to search for bus routes, book tickets, and manage reservations.
 
 ## Features
