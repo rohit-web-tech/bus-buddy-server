@@ -57,6 +57,8 @@ To run this project locally, follow these steps:
    ```bash
    npm run dev
 
+5. Your server should now be run locally on `**http://localhost:3000**`
+
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
