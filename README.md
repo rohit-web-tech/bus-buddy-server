@@ -56,3 +56,16 @@ To run this project locally, follow these steps:
    
    ```bash
    npm run dev
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+To contribute to this project, please follow these steps:
+
+1. **Fork** the project repository by clicking on the 'Fork' button on the top-right corner of this page.
+   
+2. **Create** your feature branch:
+   ```sh
+   git checkout -b feature/AmazingFeature
+
