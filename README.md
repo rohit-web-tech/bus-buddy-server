@@ -87,4 +87,4 @@ To contribute to this project, please follow these steps:
 5. **Open** a pull request. Please provide a detailed description of your changes and why you think they should be merged.
 
 ## Contact
-**Rohit Web Tech** - [Instagram](https://instagram.com/rohit_web_tech) - [rohitdogra0127@gmail.com](https://www.gmail.com/rohitdogra0127@gmail.com) 
+**Rohit Web Tech** - [Instagram](https://instagram.com/rohit_web_tech) - [rohitdogra0127@gmail.com](https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLdqJcJfCDZtWZMLtbBxLnDXrSwNlpxmdWSRPsPWnSllmsvKLMhHFLjFbbBlqZNFKHKdfr) 
