@@ -2,6 +2,7 @@
 
 Bus Buddy is a backend service for a bus booking web application that allows users to search for bus routes, book tickets, and manage reservations.
 
+
 ## Features
 
 - **User Authentication**: Secure user registration and authentication using JWT tokens.
@@ -10,6 +11,7 @@ Bus Buddy is a backend service for a bus booking web application that allows use
 - **Reservation Management**: View and manage booked tickets and reservations.
 - **Admin Panel**: Separate endpoints and functionality for admin users to manage buses, routes, and user bookings.
 
+
 ## Technologies and services Used
 
 - **Framework**: [Express.js](https://expressjs.com/)
@@ -17,6 +19,7 @@ Bus Buddy is a backend service for a bus booking web application that allows use
 - **Authentication**: [JWT (JSON Web Tokens)](https://jwt.io/)
 - **Email Sending**: [MailTrap](https://mailtrap.io/)
 - **Files Uploading**: [Cloudinary](https://cloudinary.com/)
+
 
 ## Installation
 
@@ -58,6 +61,8 @@ To run this project locally, follow these steps:
    npm run dev
 
 5. Your server should now be run locally on `http://localhost:3000`
+
+
 
 ## Contributing
 
