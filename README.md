@@ -76,3 +76,16 @@ To contribute to this project, please follow these steps:
    ```sh
    git checkout -b feature/AmazingFeature
 
+3. **Commit** your changes :
+   ```sh
+   git commit -m 'Add some AmazingFeature'
+
+4. **Push** to branch :
+   ```sh
+   git push origin feature/AmazingFeature
+
+5. **Open** a pull request. Please provide a detailed description of your changes and why you think they should be merged.
+
+
+
+
