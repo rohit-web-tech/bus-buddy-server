@@ -10,13 +10,13 @@ Bus Buddy is a backend service for a bus booking web application that allows use
 - **Reservation Management**: View and manage booked tickets and reservations.
 - **Admin Panel**: Separate endpoints and functionality for admin users to manage buses, routes, and user bookings.
 
-## Technologies Used
+## Technologies and services Used
 
 - **Framework**: [Express.js](https://expressjs.com/)
 - **Database**: [MongoDB](https://www.mongodb.com/) (using Mongoose for ODM)
 - **Authentication**: [JWT (JSON Web Tokens)](https://jwt.io/)
-- **Testing**: [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/)
-- **Deployment**: [Heroku](https://www.heroku.com/) (example, replace with your deployment platform)
+- **Email Sending**: [MailTrap](https://mailtrap.io/)
+- **Files Uploading**: [Cloudinary](https://cloudinary.com/)
 
 ## Installation
 
@@ -26,3 +26,29 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/bus-buddy-backend.git
    cd bus-buddy-backend
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Set up environment variables:
+   Create a .env file in the src directory with the following:
+   ```bash
+   PORT = 3000
+   DB_URI = YOUR_DB_URL
+   ORIGIN = SET_YOUR_ORIGIN
+   ACCESS_TOKEN_SECRET = YOUR_ACCESS_TOKEN_SECRET
+   ACCESS_TOKEN_EXPIRY = YOUR_ACCESS_TOKEN_EXPIRY 
+   REFRESH_TOKEN_SECRET = YOUR_REFRESH_TOKEN_SECRET
+   REFRESH_TOKEN_EXPIRY = YOUR_REFRESH_TOKEN_EXPIRY 
+   EMAIL_TRAP_ID = YOUR_EMAIL_TRAP_ID
+   EMAIL_TRAP_PASSWORD = YOUR_EMAIL_TRAP_PASSWORD
+   CLOUDINARY_API_SECRET = YOUR_CLOUDINARY_API_SECRET
+   CLOUDINARY_API_KEY = YOUR_CLOUDINARY_API_KEY
+   CLOUDINARY_CLOUD_NAME = YOUR_CLOUDINARY_CLOUD_NAME
+   CLIENT_URL = YOUR_FRONTEND_URL
+   MY_EMAIL = YOUR_EMAIL_ID
+
+4. Run the server:
+   ```bash
+   npm start
