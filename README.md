@@ -25,7 +25,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
    
    ```bash
-   git clone https://github.com/your-username/bus-buddy-server.git
+   git clone https://github.com/rohit-web-tech/bus-buddy-server.git
    cd bus-buddy-server
 
 2. Install dependencies:
