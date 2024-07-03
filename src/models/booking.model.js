@@ -16,7 +16,7 @@ const bookingSchema = new mongoose.Schema({
         ref: "Station",
         required: true
     },
-    bookingDate: {
+    bookingDate : {
         type: Date,
         required: true
     },
@@ -36,6 +36,16 @@ const bookingSchema = new mongoose.Schema({
     seatNumber: {
         type: Number,
         required: true
+    },
+    status : {
+        type : String ,
+        enum : ["BOOKED","CANCELLED"],
+        default : "BOOKED" ,
+        require : true 
+    },
+    totalFare : {
+        type : Number ,
+        require : true 
     }
 }, {
     timeStamps: true
