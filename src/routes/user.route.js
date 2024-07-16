@@ -17,7 +17,7 @@ const router = Router();
 router.route("/signup").post(signUpUserController);
 router.route("/verifyemail").post(verifyEmailController);
 router.route("/login").post(loginUserController);
-router.route("/logout").post(auth, logoutUserController);
+router.route("/logout").get(auth, logoutUserController);
 router.route("/refreshAccessToken").post(auth, refreshAccessToken);
 router.route("/changePassword").post(auth, changePasswordController);
 router.route("/forgetPassword").post(forgotPasswordController);

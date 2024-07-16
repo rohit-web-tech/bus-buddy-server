@@ -87,12 +87,12 @@ const loginUserController = asyncHandler(async (req, res) => {
                 $or: [{ isVerified: true }, { emailTokenExpiry: { $gt: Date.now() } }]
             }
         ]
-    })
+    }).select("-emailTokenExpiry -emailVerificationToken -forgotPasswordToken -forgotPasswordTokenExpiry -refreshToken")
 
     if (!user) {
         throw new ApiError(400, "User doesn't exist!!")
     }
-
+    
     if (!(user.isVerified)) {
         throw new ApiError(400, "Please verify your account first!!")
     }
@@ -108,7 +108,7 @@ const loginUserController = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
     }
 
     user.refreshToken = refreshToken;
@@ -119,11 +119,16 @@ const loginUserController = asyncHandler(async (req, res) => {
         .status(200)
         .cookie("AccessToken", accessToken, options)
         .cookie("RefreshToken", refreshToken, options)
-        .json([
-            new ApiResponse(200, {}, "User logged in successfully!!"),
-            { accessToken },
-            { refreshToken }
-        ])
+        .json(
+            new ApiResponse(200, {
+                user:{
+                    ...user._doc,
+                    password : ""
+                },
+                accessToken,
+                refreshToken
+            }, "User logged in successfully!!")
+        )
 
 })
 
@@ -322,6 +327,7 @@ const getCurrentUserController = asyncHandler(async (req, res) => {
                 email: 1,
                 fullName: 1,
                 contactNumber : 1 ,
+                role : 1 ,
                 bookingsCount : 1
             }
         }
